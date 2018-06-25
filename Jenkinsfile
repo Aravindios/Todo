@@ -14,10 +14,10 @@ node {
             extensions: [], submoduleCfg: [],
             userRemoteConfigs: [[
                 name: 'hannatest',
-                url: 'https://github.com/VarunRaj94/hannatest.git/'
+                url: 'https://github.com/Aravindios/Todo.git/'
             ]]
         ])
-    sh "fastlane scan"   
+    sh "fastlane beta"   
 // sh "bundle exec fastlane gym"
 
     }
