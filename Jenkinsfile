@@ -17,8 +17,10 @@ node {
                 url: 'https://github.com/Aravindios/Todo.git/'
             ]]
         ])
+        node {
     sh "fastlane beta"   
+            
 // sh "bundle exec fastlane gym"
-
+        }
     }
 }
