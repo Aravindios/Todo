@@ -18,7 +18,7 @@ node {
             ]]
         ])
         node {
-    sh "fastlane scan"   
+    sh "fastlane init"   
             
 // sh "bundle exec fastlane gym"
         }
