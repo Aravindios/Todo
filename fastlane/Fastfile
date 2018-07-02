@@ -20,6 +20,10 @@ platform :ios do
   lane :beta do
     build_app(scheme: "Todo")
     upload_to_testflight
+    increment_build_number(
+    build_number: latest_testflight_build_number + 1,
+    xcodeproj: "Todo.xcodeproj"
+  )
   end
 lane :release do
   sync_code_signing
