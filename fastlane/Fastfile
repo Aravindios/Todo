@@ -14,11 +14,12 @@
 # update_fastlane
 
 default_platform(:ios)
- sh("bundle install")
+
 platform :ios do
   desc "Push a new beta build to TestFlight"
 lane :beta do
   # ...
+  sh("bundle install")
  build_app
 
 #  crashlytics(emails: "productscog@gmail.com”,
