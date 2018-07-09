@@ -23,6 +23,7 @@ lane :beta do
   setup_jenkins
  build_app
   cert
+  app_identifier
   sigh
   crashlytics(emails: "productscog@gmail.com”,
 api_token: "6baee5125152c8e8f9b7dfa6c862a10005578358",
