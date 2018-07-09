@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Crashlytics
 
 class DetailViewController: UIViewController {
   
@@ -20,7 +21,12 @@ class DetailViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    let button = UIButton(type: .roundedRect)
+    button.frame = CGRect(x: 20, y: 50, width: 100, height: 30)
+    button.setTitle("Crash", for: [])
+    button.addTarget(self, action: #selector(self.crashButtonTapped(_:)), for: .touchUpInside)
+    view.addSubview(button)
+
     if let todo = todo {
       self.title = "Edit Todo"
       if todo.image == "child-selected"{
@@ -43,7 +49,10 @@ class DetailViewController: UIViewController {
       childButton.isSelected = true
     }
   }
-  
+    @IBAction func crashButtonTapped(_ sender: AnyObject) {
+        Crashlytics.sharedInstance().crash()
+    }
+
   // MARK: type select
   @IBAction func selectChild(_ sender: AnyObject) {
     resetButtons()

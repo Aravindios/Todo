@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18E288EF20F0678B007E37E6 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E288ED20F0678B007E37E6 /* Fabric.framework */; };
+		18E288F020F0678B007E37E6 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E288EE20F0678B007E37E6 /* Crashlytics.framework */; };
 		19515F8E1C8558F800DC2284 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19515F8D1C8558F800DC2284 /* AppDelegate.swift */; };
 		19515F901C8558F800DC2284 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19515F8F1C8558F800DC2284 /* ViewController.swift */; };
 		19515F931C8558F800DC2284 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19515F911C8558F800DC2284 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		184F806820C281C200090AF9 /* Todo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Todo.entitlements; sourceTree = "<group>"; };
+		18E288ED20F0678B007E37E6 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		18E288EE20F0678B007E37E6 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		19515F8A1C8558F800DC2284 /* Todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19515F8D1C8558F800DC2284 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19515F8F1C8558F800DC2284 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E288F020F0678B007E37E6 /* Crashlytics.framework in Frameworks */,
+				18E288EF20F0678B007E37E6 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +77,8 @@
 				19515F941C8558F800DC2284 /* Assets.xcassets */,
 				19515F961C8558F800DC2284 /* LaunchScreen.storyboard */,
 				19515F991C8558F800DC2284 /* Info.plist */,
+				18E288EE20F0678B007E37E6 /* Crashlytics.framework */,
+				18E288ED20F0678B007E37E6 /* Fabric.framework */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -85,6 +93,7 @@
 				19515F861C8558F800DC2284 /* Sources */,
 				19515F871C8558F800DC2284 /* Frameworks */,
 				19515F881C8558F800DC2284 /* Resources */,
+				18E288EC20F0676D007E37E6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -148,6 +157,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18E288EC20F0676D007E37E6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 6baee5125152c8e8f9b7dfa6c862a10005578358 4b1b1bd7cdf9bfbca6c0e2b2433f5e18461f9f4933526f45153ebf762ff69cbe";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		19515F861C8558F800DC2284 /* Sources */ = {
@@ -282,13 +307,20 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A79T4B24DZ;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Todo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cogzidel.Todo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -303,13 +335,20 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A79T4B24DZ;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Todo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cogzidel.Todo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
