@@ -20,7 +20,7 @@ platform :ios do
 
 lane :beta do
   # ...
-  setup_jenkins
+  #setup_jenkins
  build_app
   cert
   sigh(force: true)
