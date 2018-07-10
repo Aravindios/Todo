@@ -22,7 +22,7 @@ lane :beta do
   # ...
   setup_jenkins
   
- build_app
+# build_app
   cert
   sigh(force: true)
   crashlytics(emails: "productscog@gmail.com”,
