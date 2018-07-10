@@ -17,11 +17,10 @@ lane :beta do
   # increment_build_number
 
   # build your iOS app
-  build_app(
-    # scheme: "YourScheme",
-    export_method: "ad-hoc"
-  )
-
+  build_app
+ # gym
+  cert
+  sigh(force: true)
   # upload to Beta by Crashlytics
     crashlytics(api_token: "6baee5125152c8e8f9b7dfa6c862a10005578358", build_secret: "4b1b1bd7cdf9bfbca6c0e2b2433f5e18461f9f4933526f45153ebf762ff69cbe", emails: "productscog@gmail.com”)
 end
