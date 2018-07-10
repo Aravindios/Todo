@@ -19,7 +19,7 @@ lane :beta do
   # build your iOS app
   build_app(
      scheme: "Todo",
-    export_method: "appstore"
+    export_method: "app-store"
   )
  # gym
   cert
