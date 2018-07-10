@@ -17,7 +17,10 @@ lane :beta do
   # increment_build_number
 
   # build your iOS app
-  build_app
+  build_app(
+     scheme: "Todo",
+    export_method: "ad-hoc"
+  )
  # gym
   cert
   sigh(force: true)
