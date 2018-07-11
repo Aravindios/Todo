@@ -1,0 +1,32 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+
+lane :beta do
+  # ...
+ # setup_jenkins
+  
+ build_app
+ # gym
+  cert
+  sigh(force: true)
+  crashlytics(api_token: "6baee5125152c8e8f9b7dfa6c862a10005578358", build_secret: "4b1b1bd7cdf9bfbca6c0e2b2433f5e18461f9f4933526f45153ebf762ff69cbe", emails: "productscog@gmail.com”,)
+
+end
+end

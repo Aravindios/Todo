@@ -1,32 +1,25 @@
-# This file contains the fastlane.tools configuration
-# You can find the documentation at https://docs.fastlane.tools
-#
-# For a list of all available actions, check out
-#
-#     https://docs.fastlane.tools/actions
-#
-# For a list of all available plugins, check out
-#
-#     https://docs.fastlane.tools/plugins/available-plugins
-#
+# More documentation about how to customize your build
+# can be found here:
+# https://docs.fastlane.tools
+fastlane_version "2.99.0"
 
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
+# This value helps us track success metrics for Fastfiles
+# we automatically generate. Feel free to remove this line
+# once you get things running smoothly!
+generated_fastfile_id "2567a33a-6f82-4ecd-97aa-9a651c4340b0"
 
-default_platform(:ios)
+default_platform :ios
 
-platform :ios do
-  desc "Description of what the lane does"
-
+# Fastfile actions accept additional configuration, but
+# don't worry, fastlane will prompt you for required
+# info which you can add here later
 lane :beta do
-  # ...
-  #setup_jenkins
- build_app
-  cert
-  sigh(force: true)
-  crashlytics(emails: "productscog@gmail.com”,
-api_token: "6baee5125152c8e8f9b7dfa6c862a10005578358",
-              build_secret: "4b1b1bd7cdf9bfbca6c0e2b2433f5e18461f9f4933526f45153ebf762ff69cbe")
-
-end
+  # increment_build_number
+ sigh(force: true)
+  # build your iOS app
+  build_app
+ cert
+ # gym
+ # upload to Beta by Crashlytics
+    crashlytics(api_token: "6baee5125152c8e8f9b7dfa6c862a10005578358", build_secret: "4b1b1bd7cdf9bfbca6c0e2b2433f5e18461f9f4933526f45153ebf762ff69cbe", emails: "productscog@gmail.com”)
 end
